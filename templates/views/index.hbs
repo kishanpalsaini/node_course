@@ -16,13 +16,23 @@
             <p>created by {{name}}</p>
             <h2>Type location and see weather information</h2>
         </div>
-    <form action="" class="from-group">
-        <input type="text" placeholder="Type Location">
-        <button class="btn btn-primary">search-btn</button>
+        <form action="" class="from-group">
+            <input type="text" placeholder="Type Location">
+            <button class="btn btn-primary">search-btn</button>
 
-        <p id="msg-1"></p>
-        <p id="msg-2"></p>
-    </form>
+            <div>
+                <span>
+                    <b>weather-Description:</b>
+                </span>
+                <p id="msg-1"></p>
+            </div>
+            <div>
+                <span>
+                    <b>Place: </b>
+                </span>
+                <p id="msg-2"></p>
+            </div>
+        </form>
 
         {{>footer}}
     </div>
