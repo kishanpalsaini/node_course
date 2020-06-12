@@ -1,4 +1,4 @@
-console.log('client side javascript is loaded !')
+// console.log('client side javascript is loaded !')
 
 // fetch('http://puzzle.mead.io/puzzle')
 
@@ -28,12 +28,14 @@ weatherForm.addEventListener('submit', (event) => {
     // })
 
     fetch('/weather?address=' + location).then((response) => {
+
         response.json().then((data) => {
             if (data.error) {
                 return msg1.textContent = data.error
             }
-            msg1.textContent = data.place
-            msg2.textContent = data.address
+            console.log(data)
+            msg1.textContent = data.weather_des
+            msg2.textContent = data.place
         })
     })
 

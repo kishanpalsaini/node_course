@@ -56,15 +56,28 @@ app.get('/weather', (req, res) => {
             return res.send({ error })
         }
 
-        forecast(latitude, longitude, (err, forecastData) => {
-            if (err) {
+        // forecast(latitude, longitude, (err, forecastData) => {
+        //     if (err) {
+        //         return res.send({ error })
+        //     }
+        //     res.send({
+        //         data: forecastData,
+        //         place,
+        //         address: req.query.address
+        //     })
+        // })
+        forecast(place, (error, forecastData) => {
+            if (error) {
                 return res.send({ error })
             }
-            res.send({
-                data: forecastData,
-                place,
-                address: req.query.address
-            })
+            else{
+                res.send({
+                    data: forecastData,
+                    place:forecastData.request.query,
+                    weather_des:forecastData.current.weather_descriptions[0],
+                    // address: req.query.address
+                })
+            }
         })
     })
 })
